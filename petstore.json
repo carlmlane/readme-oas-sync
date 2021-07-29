@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Carl's Petstore",
+    "title": "Carl's Petstore on Github",
     "license": {
       "name": "MIT"
     }
@@ -97,6 +97,36 @@
             "description": "Expected response to a valid request",
             "schema": {
               "$ref": "#/definitions/Pets"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a Pet's Info",
+        "operationId": "updatePetById",
+        "tags": [
+          "pets"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the pet to update",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "schema": {
+              "$ref": "#/definitions/Pet"
             }
           },
           "default": {
